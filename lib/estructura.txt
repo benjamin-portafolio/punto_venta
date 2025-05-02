@@ -1,0 +1,32 @@
+lib/
+│
+├── main.dart
+│
+├── core/
+│   ├── constants/       # Strings, URLs, claves de API, etc.
+│   └── utils/           # Funciones generales (formateos, helpers, etc.)
+│
+├── data/
+│   ├── local/
+│   │   ├── db_helper.dart         # Inicialización de SQLite
+│   │   └── dao/                   # "Data Access Objects", lógica de acceso local
+│   │       └── producto_dao.dart
+│   │
+│   ├── remote/
+│   │   └── api_service.dart       # HTTP requests al servidor
+│   │
+│   └── models/
+│       └── producto_model.dart    # Clases modelo (Producto, Pedido, etc.)
+│
+├── domain/
+│   └── repositories/              # Reglas de negocio, separación de lógica
+│       └── producto_repository.dart
+│
+├── presentation/
+│   ├── pages/                     # Pantallas de la app
+│   │   └── productos_page.dart
+│   ├── widgets/                   # Widgets reutilizables
+│   └── providers/                 # Providers o controladores de estado
+│
+└── routes/
+    └── app_routes.dart           # Manejo de rutas entre pantallas
