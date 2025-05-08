@@ -69,12 +69,12 @@ class _SeleccionMesaScreenState extends State<SeleccionMesaScreen> {
             icon: const Icon(Icons.security_update_rounded),
           ),
           IconButton(
-            onPressed: () {
-              Navigator.push(
+            onPressed: () async {
+              await Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => AltaEspaciosScreen()),
               );
-              print('*******test boton************');
+              await cargarEspacios();
             },
             icon: const Icon(Icons.restaurant),
           ),

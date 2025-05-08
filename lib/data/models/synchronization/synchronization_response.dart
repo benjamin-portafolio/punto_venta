@@ -1,16 +1,17 @@
+import 'package:punto_venta/data/models/espacio_model.dart';
 import 'package:punto_venta/data/models/synchronization/espacio_response.dart';
 
 class SynchronizationResponse {
   final int? status;
-  final List<EspacioResponse>? espacioResponse;
+  final List<Espacio>? espacioResponse;
 
   SynchronizationResponse({required this.status, this.espacioResponse});
 
   factory SynchronizationResponse.fromJson(Map<String, dynamic> json) {
-    var espacioResponse = <EspacioResponse>[];
+    var espacioResponse = <Espacio>[];
     if (json['espacios'] != null) {
       json['espacios'].forEach((v) {
-        espacioResponse.add(EspacioResponse.fromJson(v));
+        espacioResponse.add(Espacio.fromServerJson(v));
       });
     }
     return SynchronizationResponse(
